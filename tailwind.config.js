@@ -7,12 +7,12 @@ export default {
   theme: {
     extend: {
       backgroundColor: {
-        bla: '#0c0f0a',
+        bla: '#202327',
         gray: '#e8e8e8',
         wine: '#800020'
       },
       textColor: {
-        bla: '#0c0f0a',
+        bla: '#202327',
         gray: '#e8e8e8',
         wine: '#800020'
       }
