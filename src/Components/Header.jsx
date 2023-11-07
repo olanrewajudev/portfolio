@@ -2,6 +2,7 @@ import React from 'react'
 import logo from '../assets/logo.png'
 import { Link } from 'react-scroll';
 import { HiMiniBars3BottomRight } from 'react-icons/hi2'
+import { useScroll, useSpring, motion } from 'framer-motion';
 
 export const links = [
     {
@@ -22,9 +23,18 @@ export const links = [
     },
 ];
 const Header = () => {
+
+    const { scrollYProgress } = useScroll();
+    const scaleX = useSpring(scrollYProgress, {
+        stiffness: 100,
+        damping: 30,
+        restDelta: 0.001
+    });
     return (
         <div>
-            <div className="fixed w-full bg-gray z-30 border-b">
+            <motion.div className="progress" style={{ scaleX }}></motion.div>
+
+            <div className="fixed w-full bg-gray z-10 border-b">
                 <div className="flex items-center justify-between py-3 px-16">
                     <div className=""> <img src={logo} alt="" className="" /> </div>
                     <div className="lg:flex hidden items-center justify-between">
